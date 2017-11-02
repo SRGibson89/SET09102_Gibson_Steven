@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -19,11 +21,111 @@ namespace Euston_Leisure_Messaging
     /// </summary>
     public partial class SMSGUI : Window
     {
+        public string[] AbbrevArray = new string[] { };
+        public string[] PhraseArray = new string[] { };
+        public string Sms;
+        public double SenderNumber;
+
+
         public SMSGUI(string MessageID)
         {
             InitializeComponent();
+            txtSender.MaxLength = 15;
             txtMessage.MaxLength = 144;
             lblMessageID.Content = MessageID;
+            LoadTxtSpeak();
+
+        }
+
+        private void LoadTxtSpeak()
+        {
+            try
+            {
+                List<string> Abbreviations = new List<string>();
+                List<string> Phrases = new List<string>();
+                string filename = @"Resources/textwords.csv";
+                StreamReader reader = new StreamReader(File.OpenRead(filename));
+                while (!reader.EndOfStream)
+                {
+                    var line = reader.ReadLine();
+                    var values = line.Split(',');
+
+                    Abbreviations.Add(values[0]);
+                    Phrases.Add(values[1]);
+
+                }
+                Console.WriteLine("\nAbbreviations List Count: " + Abbreviations.Count() + "\nPhrases List Count: " + Phrases.Count());
+
+                Console.WriteLine(Phrases.ToString());
+                AbbrevArray = Abbreviations.ToArray();
+                PhraseArray = Phrases.ToArray();
+
+            }
+
+            catch (Exception e)
+            {
+
+                Console.WriteLine("Error: " + e);
+            }
+
+            
+
+
+
+        }
+
+        private void btnSend_Click(object sender, RoutedEventArgs e)
+        {
+            txtSpeakCheck();
+            Console.WriteLine(AbbrevArray.Count());
+            Console.WriteLine(PhraseArray.Count());
+            Console.WriteLine("Sender: +" + SenderNumber);
+            Console.WriteLine("Message Reads: " + Sms);
+        }
+
+        private void txtSpeakCheck()
+        {
+            
+            string text = " "+ txtMessage.Text + " ";
+            
+            int total = AbbrevArray.Count();
+            for (int i = 0; i < total; i++)
+            {
+                string str = " "+ AbbrevArray[i]+" ";
+                Console.WriteLine(str);
+                //Console.WriteLine("-----------");
+
+                if (text.Contains(str))
+                {
+
+                    string Cleaned = Regex.Replace(text, str, str + " <"+PhraseArray[i]+"> ");
+                    text = Cleaned;
+
+                }
+                
+            }
+            Sms = text;
+        }
+
+        private void txtSender_LostFocus(object sender, RoutedEventArgs e)
+        {
+            string Sender = txtSender.Text;
+            if (Sender.StartsWith("0"))
+            {
+                int lastnumber = Sender.Length - 1;
+                Sender = "44" + Sender.Substring(1, lastnumber);
+            }
+
+
+            try
+            {
+                SenderNumber = double.Parse(Sender);
+
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Sender must be a phone Number");
+            }
 
         }
     }
