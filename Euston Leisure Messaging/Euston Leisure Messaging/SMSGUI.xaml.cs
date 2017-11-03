@@ -67,11 +67,7 @@ namespace Euston_Leisure_Messaging
 
                 Console.WriteLine("Error: " + e);
             }
-
             
-
-
-
         }
 
         private void btnSend_Click(object sender, RoutedEventArgs e)
