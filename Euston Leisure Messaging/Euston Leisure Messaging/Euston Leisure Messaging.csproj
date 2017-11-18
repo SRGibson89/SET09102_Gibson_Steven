@@ -62,9 +62,11 @@
     <Compile Include="FacadeEmail.cs" />
     <Compile Include="FacadeSMS.cs" />
     <Compile Include="FacadeTweet.cs" />
+    <Compile Include="Hashtag.cs" />
     <Compile Include="InputWindow.xaml.cs">
       <DependentUpon>InputWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SingletonTag.cs" />
     <Compile Include="SMSGUI.xaml.cs">
       <DependentUpon>SMSGUI.xaml</DependentUpon>
     </Compile>
