@@ -5,8 +5,8 @@
     <Grid>
         <Label x:Name="lblMessageId" Content="Message ID:" HorizontalAlignment="Left" Height="26" Margin="20,46,0,0" VerticalAlignment="Top" Width="80"/>
         <TextBox x:Name="txtID" HorizontalAlignment="Left" Height="22" Margin="105,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165"/>
-        <Button x:Name="btnOK" Content="Send" Margin="157,107,60,0" VerticalAlignment="Top" Click="btnOK_Click"/>
-        <Button x:Name="btnBack" Content="Go Back" Margin="60,107,157,0" VerticalAlignment="Top" Click="btnBack_Click"/>
+        <Button x:Name="btnOK" Content="Send" Margin="60,106,157,0" VerticalAlignment="Top" Click="btnOK_Click"/>
+        <Button x:Name="btnBack" Content="Go Back" Margin="160,106,57,0" VerticalAlignment="Top" Click="btnBack_Click"/>
 
     </Grid>
 </Window>

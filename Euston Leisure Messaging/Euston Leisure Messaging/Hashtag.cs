@@ -16,8 +16,8 @@ namespace Euston_Leisure_Messaging
 {
     class Hashtag
     {
-        public string tag;
-        public int trending;
+        private string tag;
+        private int trending;
          
         public string Tag
         {

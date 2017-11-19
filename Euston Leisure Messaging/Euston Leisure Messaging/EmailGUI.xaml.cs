@@ -40,7 +40,9 @@ namespace Euston_Leisure_Messaging
             Sender = txtSender.Text.ToString();
             Subject = txtSubject.Text.ToString();
             UrlCheck();
-            //Sender Validation
+
+            /*
+            Sender Validation
             Sender.ToLower();
             if (valid_email == false)
             {
@@ -95,12 +97,23 @@ namespace Euston_Leisure_Messaging
                     valid_email = false;
                 }
                 }
+            */
         }
 
         private void txtSubject_LostFocus(object sender, RoutedEventArgs e)
         {
             string subject = txtSubject.Text.ToString().ToUpper();
- 
+
+            //Subject Vaildation
+            if (subject.Length >= 1)
+            {
+                valid_email = true;
+            }
+            else
+            {
+                valid_email = false;
+                Console.WriteLine("Subject Required");
+            }
             if (subject.Contains("SIR"))
             {
                 Incident = true;
@@ -113,11 +126,79 @@ namespace Euston_Leisure_Messaging
                 lblIncident.Visibility = Visibility.Hidden;
                 cmbIncident.Visibility = Visibility.Hidden;
             }
+            emailValidation();
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
             CloseThisWindow();
+        }
+
+        private void txtSender_LostFocus(object sender, RoutedEventArgs e)
+        {
+            Sender = txtSender.Text.ToString();
+            Subject = txtSubject.Text.ToString();
+            Sender.ToLower();
+            if (valid_email == false)
+            {
+                if (Sender.Contains('@'))
+                {
+                    if (Sender.Contains(".uk") || Sender.Contains(".com"))
+                    {
+                        valid_email = true;
+                    }
+                    else
+                    {
+                        valid_email = false;
+                        Console.WriteLine("Sender is Invalid");
+                    }
+                }
+                else
+                {
+                    valid_email = false;
+                    Console.WriteLine("Sender is Invalid");
+                }
+                if (Subject.Length >= 1)
+                {
+                    valid_email = true;
+                }
+                else
+                {
+                    valid_email = false;
+                    Console.WriteLine("Subject Required");
+                }
+
+                emailValidation();
+            }
+        }
+
+        private void emailValidation()
+        {
+            if (valid_email == true)
+            {
+                if (Incident == false)
+                {
+
+                    Console.WriteLine("Message ID: " + lblMessageID.Content
+                                      + "\nSender: " + Sender
+                                      + "\nSubject: " + Subject
+                                      + "\nMessage Reads: " + Email);
+                    btnSend.IsEnabled = true;
+                    valid_email = false;
+                }
+                if (Incident == true)
+                {
+
+                    string NatureofIncidnet = cmbIncident.Text.ToString();
+                    Email = lblIncident.Content + " " + NatureofIncidnet + "\n" + Email;
+                    Console.WriteLine("Message ID: " + lblMessageID.Content
+                                      + "\nSender: " + Sender
+                                      + "\nSubject: " + Subject
+                                      + "\nMessage Reads: " + Email);
+                    btnSend.IsEnabled = true;
+                    valid_email = false;
+                }
+            }
         }
 
         private void CloseThisWindow()

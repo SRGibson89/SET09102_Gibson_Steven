@@ -21,10 +21,10 @@ namespace Euston_Leisure_Messaging
     /// </summary>
     public partial class SMSGUI : Window
     {
-        public string[] AbbrevArray = new string[] { };
-        public string[] PhraseArray = new string[] { };
-        public string Sms;
-        public double SenderNumber;
+        private string[] AbbrevArray = new string[] { };
+        private string[] PhraseArray = new string[] { };
+        private string Sms;
+        private double SenderNumber;
 
 
         public SMSGUI(string MessageID)
@@ -116,12 +116,15 @@ namespace Euston_Leisure_Messaging
             try
             {
                 SenderNumber = double.Parse(Sender);
+                btnSend.IsEnabled = true;
 
             }
             catch (Exception)
             {
                 Console.WriteLine("Sender must be a phone Number");
+                btnSend.IsEnabled = false;
             }
+
 
         }
     }
