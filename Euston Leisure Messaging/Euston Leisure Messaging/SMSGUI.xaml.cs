@@ -73,10 +73,12 @@ namespace Euston_Leisure_Messaging
         private void btnSend_Click(object sender, RoutedEventArgs e)
         {
             txtSpeakCheck();
-            Console.WriteLine(AbbrevArray.Count());
-            Console.WriteLine(PhraseArray.Count());
+            FacadeSMS fac_Sms = new FacadeSMS(lblMessageID.Content.ToString(),SenderNumber, Sms);
+            //Console.WriteLine(AbbrevArray.Count());
+            //Console.WriteLine(PhraseArray.Count());
             Console.WriteLine("Sender: +" + SenderNumber);
             Console.WriteLine("Message Reads: " + Sms);
+            CloseWindow();
         }
 
         private void txtSpeakCheck()
@@ -126,6 +128,16 @@ namespace Euston_Leisure_Messaging
             }
 
 
+        }
+        private void CloseWindow()
+        {
+            InputWindow newWin = new InputWindow();
+            newWin.Show();
+            this.Close();
+        }
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            CloseWindow();
         }
     }
 }

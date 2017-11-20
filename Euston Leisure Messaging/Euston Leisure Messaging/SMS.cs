@@ -15,13 +15,35 @@ namespace Euston_Leisure_Messaging
         public string MessageID
         {
             get { return messageID; }
-            set { messageID = value; }
+            set 
+            {
+                if (value.StartsWith("S"))
+                {
+                    messageID = value;
+                }
+                else
+                {
+                    throw new ArgumentException("Phone Number is invalid");
+                }
+            }
         }
         public double PhoneNumber
 
         {
             get { return phoneNumber; }
-            set { phoneNumber = value; }
+            set 
+            {
+                string Pnum = value.ToString();
+                if (Pnum.Length <= 11 && Pnum.Length >= 15)
+                {
+                    phoneNumber = value; 
+                }
+                else
+                {
+                    throw new ArgumentException("Phone Number is invalid");
+                }
+                
+            }
         }
 
         public string Message

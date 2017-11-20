@@ -1,10 +1,14 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Script.Serialization;
+using System.ServiceModel.Web;
+using Newtonsoft.Json.Linq;
+
 
 /// Facade Design Pattern.
 namespace Euston_Leisure_Messaging
@@ -24,22 +28,20 @@ namespace Euston_Leisure_Messaging
         {
             try
             {
-                string FileLoc = @"Resources\messages\tweets.json";
-                Tweet NewT = new Tweet();
-                StreamReader sr = new StreamReader(FileLoc);
-                string jsonString = sr.ReadToEnd();
-                JavaScriptSerializer ser = new JavaScriptSerializer();
-                NewT = ser.Deserialize<Tweet>(jsonString);
 
-                sr.Close();
+
+                string FileLoc = @"Resources\messages\tweets.json";
+                string json = File.ReadAllText(FileLoc);
+                Tweet_List.TweetsList = JsonConvert.DeserializeObject<List<Tweet>>(json);
             }
-            catch
+            catch (Exception)
             {
 
+                throw;
             }
         }
 
-        public void New_Tweet(string M_ID,string h,string m)
+        private void New_Tweet(string M_ID,string h,string m)
         {
             try
             {
@@ -49,8 +51,6 @@ namespace Euston_Leisure_Messaging
                 T.Handle = h;
                 T.Message = m;
                 Tweet_List.TweetsList.Add(T);
-
-                
                 Console.WriteLine("Saved " + M_ID);
             }
             catch (Exception e)
@@ -59,17 +59,10 @@ namespace Euston_Leisure_Messaging
             }
         }
 
-        public void SaveTweet()
+        private void SaveTweet()
         {
             string FileLoc = @"Resources\messages\tweets.json"; //filename where data will be stored
-
-            foreach (Tweet T in Tweet_List.TweetsList)
-            {
-
-                string json = new JavaScriptSerializer().Serialize(T);
-                File.WriteAllText(FileLoc, json);
-            }//foreach ends
-
+            File.WriteAllText(FileLoc, JsonConvert.SerializeObject(Tweet_List.TweetsList));
             Console.WriteLine("All data saved to " + FileLoc);
         }
 

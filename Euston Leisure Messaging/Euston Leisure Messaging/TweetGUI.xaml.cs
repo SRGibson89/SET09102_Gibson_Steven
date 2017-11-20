@@ -150,6 +150,7 @@ namespace Euston_Leisure_Messaging
             //Console.WriteLine(PhraseArray.Count());
 
             Console.WriteLine("Message Reads: " + Tweet);
+            CloseWindow();
         }
 
 

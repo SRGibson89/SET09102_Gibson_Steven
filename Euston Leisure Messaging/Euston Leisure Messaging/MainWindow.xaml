@@ -4,7 +4,7 @@
         Title="Euston Leisure Messaging Service" Height="400" Width="400">
     <Grid>
         <Button x:Name="BtnSend" Content="Send Message" Margin="136,130,136,199" Click="BtnSend_Click"/>
-        <Button x:Name="btnRead" Content="Read Messages" Margin="136,199,136,130"/>
+        <Button x:Name="btnRead" Content="Read Messages" Margin="136,199,136,130" Click="btnRead_Click"/>
 
     </Grid>
 </Window>

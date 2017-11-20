@@ -33,6 +33,13 @@ namespace Euston_Leisure_Messaging
 
         }
 
+        private void btnRead_Click(object sender, RoutedEventArgs e)
+        {
+            ReadMessages newwin = new ReadMessages();
+            newwin.Show();
+            this.Close();
+        }
+
         
     }
 }

@@ -9,7 +9,7 @@
         <TextBox x:Name="txtSender" HorizontalAlignment="Left" Height="26" Margin="135,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="309" LostFocus="txtSender_LostFocus"/>
         <Label x:Name="lblMesage" Content="Message:" HorizontalAlignment="Left" Margin="55,90,0,0" VerticalAlignment="Top" Width="75"/>
         <TextBox x:Name="txtMessage" HorizontalAlignment="Left" Height="145" Margin="55,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="389"/>
-        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Margin="369,308,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Margin="369,308,0,0" VerticalAlignment="Top" Width="75" Click="btnCancel_Click"/>
         <Button x:Name="btnSend" Content="Send" HorizontalAlignment="Left" Margin="254,308,0,0" VerticalAlignment="Top" Width="75" Click="btnSend_Click" IsEnabled="False"/>
     </Grid>
 </Window>
