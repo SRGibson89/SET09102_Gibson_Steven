@@ -79,9 +79,11 @@
     </Compile>
     <Compile Include="SingletonEmail.cs" />
     <Compile Include="SingletonMentions.cs" />
+    <Compile Include="SingletonSIR.cs" />
     <Compile Include="SingletonSms.cs" />
     <Compile Include="SingletonTag.cs" />
     <Compile Include="SingletonTweets.cs" />
+    <Compile Include="SIR.cs" />
     <Compile Include="SMS.cs" />
     <Compile Include="SMSGUI.xaml.cs">
       <DependentUpon>SMSGUI.xaml</DependentUpon>

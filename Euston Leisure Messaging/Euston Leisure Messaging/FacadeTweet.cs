@@ -28,8 +28,6 @@ namespace Euston_Leisure_Messaging
         {
             try
             {
-
-
                 string FileLoc = @"Resources\messages\tweets.json";
                 string json = File.ReadAllText(FileLoc);
                 Tweet_List.TweetsList = JsonConvert.DeserializeObject<List<Tweet>>(json);

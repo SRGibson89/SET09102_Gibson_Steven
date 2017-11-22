@@ -50,8 +50,16 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="EmailUnitTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SMSUnitTest.cs" />
+    <Compile Include="TweetUnitTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Euston Leisure Messaging\Euston Leisure Messaging.csproj">
+      <Project>{6e48dea5-2832-4219-a585-731ac3882438}</Project>
+      <Name>Euston Leisure Messaging</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

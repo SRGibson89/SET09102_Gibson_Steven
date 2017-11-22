@@ -25,11 +25,18 @@ namespace Euston_Leisure_Messaging
         SingletonTweets Tweet_List = SingletonTweets.Instance;
         SingletonEmail Email_List = SingletonEmail.Instance;
         SingletonSms Sms_List = SingletonSms.Instance;
+        SingletonSIR SIR_List = SingletonSIR.Instance;
+        SingletonMentions Mention_List = SingletonMentions.Instance;
+        SingletonTag Tag_List = SingletonTag.Instance;
+
         public ReadMessages()
         {
             InitializeComponent();
             LoadMessages();
+           
         }
+
+       
 
         private void LoadMessages()
         {
@@ -38,6 +45,7 @@ namespace Euston_Leisure_Messaging
             LoadSms();
             
         }
+        
 
         private void LoadSms()
         {
@@ -59,13 +67,6 @@ namespace Euston_Leisure_Messaging
             string json = File.ReadAllText(FileLoc);
             Tweet_List.TweetsList = JsonConvert.DeserializeObject<List<Tweet>>(json);
         }
-
-        private void cmbTweets_Drop(object sender, DragEventArgs e)
-        {
-           
-
-        }
-
         
         //show Tweets in box;
         private void cmbTweets_DropDownOpened(object sender, EventArgs e)
@@ -99,38 +100,7 @@ namespace Euston_Leisure_Messaging
 
             }
         }
-        private void cmbTweets_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-        //    lstShow.Items.Clear();
-        //    foreach (Tweet T in Tweet_List.TweetsList)
-        //    {
-        //        if (cmbTweets.Text == T.MessageID)
-        //        {
-        //            lstShow.Items.Add("Message ID: " + T.MessageID +
-        //                                "\nTwitter Account: " + T.Handle +
-        //                                "\nTweet: " + T.Message);
-        //        }
-                
-        //    }
-        }
-
-        private void cmbTweets_DropDownClosed(object sender, EventArgs e)
-        {
-            //lstShow.Items.Clear();
-            //foreach (Tweet T in Tweet_List.TweetsList)
-            //{
-            //    if (cmbTweets.Text == T.MessageID)
-            //    {
-            //        cmbTweets.Items.Add("Message ID: " + T.MessageID +
-            //                            "\nTwitter Account: " + T.Handle +
-            //                            "\nTweet: " + T.Message);
-            //    }
-            //    else
-            //    {
-            //        cmbTweets.Items.Add("Select Message ID");
-            //    }
-            //}
-        }
+       
         private void cmbEmail_DropDownOpened(object sender, EventArgs e)
         {
             cmbTweets.Items.Clear();
@@ -224,8 +194,39 @@ namespace Euston_Leisure_Messaging
             this.Close();
         }
 
-        
+        private void btntrending_Click(object sender, RoutedEventArgs e)
+        {
+            lstShow.Items.Clear();
 
-        
+            lstShow.Items.Add("**Hastags**");
+            
+            foreach (Hashtag H in Tag_List.HashtagList)
+            {
+                lstShow.Items.Add("Hashtag: " + H.Tag +
+                                 "\nTrending: " + H.Trending+
+                                 "\n-------------------------------");
+            }
+
+            lstShow.Items.Add("\n**Mentions**");
+
+            foreach (Mentions M in Mention_List.MentionList)
+            {
+                lstShow.Items.Add("Mentions: " + M.Handle +
+                                 "\nTrending: " + M.Trending +
+                                 "\n-------------------------------");
+            }
+        }
+
+        private void btnSirs_Click(object sender, RoutedEventArgs e)
+        {
+            lstShow.Items.Clear();
+            lstShow.Items.Add("Serious Incidents Report");
+            foreach (SIR S in SIR_List.SIRList)
+            {
+                lstShow.Items.Add("Incident: " + S.Incident+
+                                 "\nHas Occurred: " + S.Occurances +
+                                 "\n-------------------------------");
+            }
+        }
     }
 }

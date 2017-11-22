@@ -40,8 +40,7 @@ namespace Euston_Leisure_Messaging
             txtMessage.MaxLength = 144;
             lblMessageID.Content = MessageID;
             LoadTxtSpeak();
-            LoadHashtags();
-            LoadMentions();
+           
 
         }
         //Load Textspeak.csv
@@ -78,63 +77,9 @@ namespace Euston_Leisure_Messaging
 
         }
         //Load Hashtag.csv
-        private void LoadHashtags()
-        {
-            string filename = @"Resources/hashtags.csv";
-            StreamReader reader = new StreamReader(File.OpenRead(filename));
-            if (reader.Peek() == 0) //checks to see if the file is empty
-            {
-                Console.WriteLine("File is empty");
-            }
-            else
-            {
-                  while (!reader.EndOfStream)
-                  {
-                    try
-                    {
-                        string line = reader.ReadLine();
-                        var value = line.Split(',');
-                        Hashtag H = new Hashtag(value[0], value[1]); //make a new hashtag object
-                        Tag_List.HashtagList.Add(H);
+        
 
-                    }
-                    catch (Exception e)
-                    {
-                        Console.WriteLine("Error: " + e);
-                    }
-                }//end of while
-                reader.Close();
-            }//end of else
-        }
-
-        private void LoadMentions()
-        {
-            string filename = @"Resources/mentions.csv";
-            StreamReader reader = new StreamReader(File.OpenRead(filename));
-            if (reader.Peek() == 0) //checks to see if the file is empty
-            {
-                Console.WriteLine("File is empty");
-            }
-            else
-            {
-                while (!reader.EndOfStream)
-                {
-                    try
-                    {
-                        string line = reader.ReadLine();
-                        var value = line.Split(',');
-                        Mentions M = new Mentions(value[0], value[1]); //make a new hashtag object
-                        Mention_List.MentionList.Add(M);
-
-                    }
-                    catch (Exception e)
-                    {
-                        Console.WriteLine("Error: " + e);
-                    }
-                }//end of while
-                reader.Close();
-            }//end of else
-        }
+       
 
         private void btnSend_Click(object sender, RoutedEventArgs e)
         {
@@ -245,7 +190,7 @@ namespace Euston_Leisure_Messaging
         private void WriteHashtags()
         {
             string filename = @"Resources\hashtags.csv"; //filename where data will be stored
-            StreamWriter writer = new StreamWriter(filename);
+            StreamWriter writer = new StreamWriter(filename,false);
             foreach (Hashtag H in Tag_List.HashtagList)
             {
                 writer.WriteLine("{0},{1}", H.Tag,H.Trending.ToString()); //adds each object to the file as a line of text
@@ -307,7 +252,7 @@ namespace Euston_Leisure_Messaging
         private void WriteMentions()
         {
             string filename = @"Resources\mentions.csv"; //filename where data will be stored
-            StreamWriter writer = new StreamWriter(filename);
+            StreamWriter writer = new StreamWriter(filename,false);
             foreach (Mentions M in Mention_List.MentionList)
             {
                 writer.WriteLine("{0},{1}", M.Handle, M.Trending.ToString()); //adds each object to the file as a line of text

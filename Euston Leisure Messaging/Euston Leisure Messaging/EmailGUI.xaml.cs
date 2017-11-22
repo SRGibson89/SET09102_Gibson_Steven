@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Text.RegularExpressions;
+using System.IO;
 
 namespace Euston_Leisure_Messaging
 {
@@ -21,9 +22,10 @@ namespace Euston_Leisure_Messaging
     public partial class EmailGUI : Window
     {
         private bool valid_email = false;
-        private bool Incident = false;
-        private string Email,Sender,Subject,CenterID;
-        
+        private bool Incident = false, PreviousIncident = false;
+        private string Email, Sender, Subject, CenterID;
+        SingletonSIR SIR_List = SingletonSIR.Instance;
+
 
         public EmailGUI(string MessageID)
         {
@@ -35,8 +37,10 @@ namespace Euston_Leisure_Messaging
             txtcenter1.MaxLength = 2;
             txtcenter2.MaxLength = 3;
             txtcenter3.MaxLength = 2;
+            
         }
 
+        
         private void btnSend_Click(object sender, RoutedEventArgs e)
         {
             Email = txtMessage.Text.ToString();
@@ -45,38 +49,106 @@ namespace Euston_Leisure_Messaging
             UrlCheck();
             if (Incident == false)
             {
+                string NatureofIncidnet = "N/A";
+                string CenterID = "N/A";
+                Console.WriteLine("Message ID: " + lblMessageID.Content.ToString() +
+                                  "\nSender: " + txtSender.Text +
+                                  "\nSubject: " + txtSubject.Text +
+                                  "\nCeneter Code: " + CenterID +
+                                  "\nNature of Incident: " + NatureofIncidnet +
+                                  "\nMessage Reads: " + Email);
                 FacadeEmail fac_email = new FacadeEmail(lblMessageID.Content.ToString(),
                                                         txtSender.Text,
-                                                        txtSubject.Text,
+                                                        Subject,
+                                                        NatureofIncidnet,
+                                                        CenterID,
                                                         Email);
-                Console.WriteLine("Message ID: " + lblMessageID.Content.ToString() +
-                                 "\nSender: " + txtSender.Text +
-                                 "\nSubject: " + txtSubject.Text +
-                                 "\nMessage Reads: " + Email);
+
             }
             else if (Incident == true)
             {
-                string NatureofIncidnet = cmbIncident.Text.ToString();
-                Email = "Center Code: " + CenterID + " " 
-                        + lblIncident.Content + " " 
-                        + NatureofIncidnet 
+                string NatureofIncidnet = cmbIncident.Text;
+                Email = "Center Code: " + CenterID + " "
+                        + lblIncident.Content + " "
+                        + NatureofIncidnet
                         + "\n" + Email;
                 FacadeEmail fac_email = new FacadeEmail(lblMessageID.Content.ToString(),
                                                         txtSender.Text,
                                                         Subject,
-                                                        cmbIncident.SelectedItem.ToString(),
+                                                        NatureofIncidnet,
                                                         CenterID,
                                                         Email);
-                Console.WriteLine("Message ID: " + lblMessageID.Content.ToString()+
-                                  "\nSender: "+ txtSender.Text+
-                                  "\nSubject: "+txtSubject.Text+
-                                  "\nCeneter Code: "+ CenterID+
-                                  "\nNature of Incident: "+ NatureofIncidnet+
-                                  "\nMessage Reads: "+ Email);
+                Console.WriteLine("Message ID: " + lblMessageID.Content.ToString() +
+                                  "\nSender: " + txtSender.Text +
+                                  "\nSubject: " + txtSubject.Text +
+                                  "\nCeneter Code: " + CenterID +
+                                  "\nNature of Incident: " + NatureofIncidnet +
+                                  "\nMessage Reads: " + Email);
+                SIRUpdate();
             }
             CloseThisWindow();
            
         }
+
+        private void SIRUpdate()
+        {
+            string inciddent = cmbIncident.Text;
+            try
+            {
+                foreach (SIR H in SIR_List.SIRList)
+                {
+
+                    if (inciddent == H.Incident)
+                    {
+
+                        H.Occurances = H.Occurances + 1;
+                        Console.WriteLine("Incident = " + H.Incident
+                                            + " Has Happened " + H.Occurances
+                                            + " time(s)");
+
+                        PreviousIncident = true;
+                        break;
+
+                    }
+
+
+                }//for loop ends
+
+                if (PreviousIncident == false)
+                {
+                    SIR NewS = new SIR(inciddent, "1");
+                    SIR_List.SIRList.Add(NewS);
+                    Console.WriteLine("This is the 1st Time " + inciddent
+                                        + " has occurred ");
+                                        
+                }
+                PreviousIncident = false;
+            }//try ends
+            catch (Exception)
+            {
+
+                Console.WriteLine("error");
+            }
+            
+            WriteSIR();
+                }
+            
+            
+
+
+        private void WriteSIR()
+        {
+                string filename = @"Resources\sir.csv"; //filename where data will be stored
+                StreamWriter writer = new StreamWriter(filename,false);
+                foreach (SIR S in SIR_List.SIRList)
+                {
+                    writer.WriteLine("{0},{1}", S.Incident, S.Occurances.ToString()); //adds each object to the file as a line of text
+
+                }//foreach ends
+                writer.Close(); //closes the file
+                Console.WriteLine("All data saved to " + filename);
+        }
+        
 
         private void txtSubject_LostFocus(object sender, RoutedEventArgs e)
         {

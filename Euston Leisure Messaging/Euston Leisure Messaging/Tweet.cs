@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Euston_Leisure_Messaging
 {
-    class Tweet
+    public class Tweet
     {
         private string messageID;
         private string handle;
@@ -15,18 +15,65 @@ namespace Euston_Leisure_Messaging
         public string MessageID
         {
             get { return messageID; }
-            set { messageID = value; }
+            set
+            {
+                if (value.StartsWith("T"))
+                {
+                    if (value.Length == 10)
+                    {
+                        messageID = value;
+                    }
+                    else
+                    {
+                        throw new ArgumentOutOfRangeException("MessageId mus be 10 characters long");
+                    }
+                }
+                else
+                {
+                    throw new ArgumentException("MessageID must start with a 'T'");
+                }
+            }
         }
         public string Handle
         {
             get { return handle; }
-            set { handle = value; }
-        }
+            set
+            {
+                if (value.Length >=2&&value.Length<=15)
+                {
+                    if (value.StartsWith("@"))
+                    {
+                        handle = value;
+                    }
+                    else
+                    {
+                        throw new ArgumentException("Twitter handle's must start with an '@'");
+                    }
 
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException("Twitter handle's must between 2 and 15 characters long");
+                }
+
+            }
+        }
+        
         public string Message
         {
             get { return message; }
-            set { message = value; }
+            set
+            {
+                if (value.Length >= 1 && value.Length <= 144)
+                {
+                    message = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException("Message must be between 1 and 144 characters long");
+                }
+
+            }
         }
 
         public Tweet()

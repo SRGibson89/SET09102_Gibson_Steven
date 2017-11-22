@@ -12,12 +12,12 @@ namespace Euston_Leisure_Messaging
     {
         SingletonEmail Email_List = SingletonEmail.Instance;
         
-        public FacadeEmail (string M_ID,string s,string sub,string m)
-        {
-            LoadEmails();
-            NewEmail(M_ID, s, sub, m);
-            SaveEmail();
-        }
+        //public FacadeEmail (string M_ID,string s,string sub,string m)
+        //{
+        //    LoadEmails();
+        //    NewEmail(M_ID, s, sub, m);
+        //    SaveEmail();
+        //}
 
         
         public FacadeEmail(string M_ID, string s, string sub,string i,string c, string m)
@@ -43,23 +43,23 @@ namespace Euston_Leisure_Messaging
            
         }
 
-        private void NewEmail(string M_ID, string s, string sub, string m)
-        {
-            try
-            {
-                Email E = new Email();
-                E.MessageID = M_ID;
-                E.Sender = s;
-                E.Subject = sub;
-                E.Message = m;
-                Email_List.EmailList.Add(E);
-            }
-            catch (Exception e)
-            {
+        //private void NewEmail(string M_ID, string s, string sub, string m)
+        //{
+        //    try
+        //    {
+        //        Email E = new Email();
+        //        E.MessageID = M_ID;
+        //        E.Sender = s;
+        //        E.Subject = sub;
+        //        E.Message = m;
+        //        Email_List.EmailList.Add(E);
+        //    }
+        //    catch (Exception e)
+        //    {
 
-                Console.WriteLine(e.Message);
-            }
-        }
+        //        Console.WriteLine(e.Message);
+        //    }
+        //}
 
         private void NewEmail(string M_ID, string s, string sub, string i, string c, string m)
         {

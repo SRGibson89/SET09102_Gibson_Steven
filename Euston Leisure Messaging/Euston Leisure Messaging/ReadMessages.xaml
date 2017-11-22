@@ -7,12 +7,14 @@
         <Label x:Name="lblTweet" Content="Tweet" Height="30" Margin="100,107,422,0" VerticalAlignment="Top" FontFamily="Rockwell" FontSize="19"/>
         <Label x:Name="lblEmail" Content="Email" Height="30" Margin="261,107,261,0" VerticalAlignment="Top" FontFamily="Rockwell" FontSize="19"/>
         <Label x:Name="lblSms" Content="SMS" Height="30" Margin="422,107,100,0" VerticalAlignment="Top" FontFamily="Rockwell" FontSize="19"/>
-        <ComboBox x:Name="cmbTweets" Height="26" Margin="75,142,397,0" VerticalAlignment="Top" Drop="cmbTweets_Drop" DropDownClosed="cmbTweets_DropDownClosed" DropDownOpened="cmbTweets_DropDownOpened" SelectionChanged="cmbTweets_SelectionChanged" ContextMenuClosing="cmbTweets_ContextMenuClosing"/>
+        <ComboBox x:Name="cmbTweets" Height="26" Margin="75,142,397,0" VerticalAlignment="Top" DropDownOpened="cmbTweets_DropDownOpened"/>
         <ComboBox x:Name="cmbEmail" Height="26" Margin="236,142,236,0" VerticalAlignment="Top" DropDownOpened="cmbEmail_DropDownOpened"/>
         <ComboBox x:Name="cmbSMS" Height="26" Margin="397,142,75,0" VerticalAlignment="Top" DropDownOpened="cbmSMS_DropDownOpened"/>
         <ListBox x:Name="lstShow" HorizontalAlignment="Left" Height="215" Margin="75,235,0,0" VerticalAlignment="Top" Width="442"/>
-        <Button x:Name="BtnGo" Content="Show Message" HorizontalAlignment="Left" Margin="236,188,0,0" VerticalAlignment="Top" Width="120" Height="26" Click="BtnGo_Click"/>
-        <Button x:Name="btnBack" Content="Return to Menu" HorizontalAlignment="Left" Margin="236,470,0,0" VerticalAlignment="Top" Width="120" Height="26" Click="btnBack_Click"/>
+        <Button x:Name="BtnGo" Content="Show Message" HorizontalAlignment="Left" Margin="155,470,0,0" VerticalAlignment="Top" Width="120" Height="26" Click="BtnGo_Click"/>
+        <Button x:Name="btnBack" Content="Return to Menu" Margin="317,470,155,0" VerticalAlignment="Top" Height="26" Click="btnBack_Click"/>
+        <Button x:Name="btntrending" Content="Show Trends" Margin="75,187,397,0" VerticalAlignment="Top" Height="26" Click="btntrending_Click"/>
+        <Button x:Name="btnSirs" Content="Show SIRs" Margin="236,187,236,0" VerticalAlignment="Top" Height="26" Click="btnSirs_Click"/>
 
     </Grid>
 </Window>

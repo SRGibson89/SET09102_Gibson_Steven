@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Euston_Leisure_Messaging
 {
-    class SMS
+    public class SMS
     {
         private string messageID;
         private double phoneNumber;
@@ -19,11 +19,18 @@ namespace Euston_Leisure_Messaging
             {
                 if (value.StartsWith("S"))
                 {
-                    messageID = value;
+                    if (value.Length == 10)
+                    {
+                        messageID = value;
+                    }
+                    else
+                    {
+                        throw new ArgumentOutOfRangeException("MessageId mus be 10 characters long");
+                    }
                 }
                 else
                 {
-                    throw new ArgumentException("Phone Number is invalid");
+                    throw new ArgumentException("MessageID must start with a 'S'");
                 }
             }
         }
@@ -34,13 +41,13 @@ namespace Euston_Leisure_Messaging
             set 
             {
                 string Pnum = value.ToString();
-                if (Pnum.Length <= 11 && Pnum.Length >= 15)
+                if (Pnum.Length >= 10 && Pnum.Length <= 16)
                 {
-                    phoneNumber = value; 
+                    phoneNumber = value;
                 }
                 else
                 {
-                    throw new ArgumentException("Phone Number is invalid");
+                    throw new ArgumentOutOfRangeException("Phone Number is invalid");
                 }
                 
             }
@@ -49,7 +56,21 @@ namespace Euston_Leisure_Messaging
         public string Message
         {
             get { return message; }
-            set { message = value; }
+            set {
+                if (value.Length >= 1 && value.Length <= 144)
+                {
+                    message = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException("Message must be between 1 and 144 characters long");
+                }
+                
+            }
+        }
+
+        public SMS()
+        {
         }
     }
 }
