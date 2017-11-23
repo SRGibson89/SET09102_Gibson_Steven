@@ -44,37 +44,7 @@ namespace Euston_Leisure_Messaging
 
         }
 
-        internal FacadeTweet FacadeTweet
-        {
-            get => default(FacadeTweet);
-            set
-            {
-            }
-        }
-
-        public InputWindow InputWindow
-        {
-            get => default(InputWindow);
-            set
-            {
-            }
-        }
-
-        internal SingletonTag SingletonTag
-        {
-            get => default(SingletonTag);
-            set
-            {
-            }
-        }
-
-        internal SingletonMentions SingletonMentions
-        {
-            get => default(SingletonMentions);
-            set
-            {
-            }
-        }
+        
 
         //Load Textspeak.csv
         private void LoadTxtSpeak()

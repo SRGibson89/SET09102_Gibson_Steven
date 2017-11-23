@@ -41,29 +41,7 @@ namespace Euston_Leisure_Messaging
             
         }
 
-        public InputWindow InputWindow
-        {
-            get => default(InputWindow);
-            set
-            {
-            }
-        }
-
-        internal FacadeEmail FacadeEmail
-        {
-            get => default(FacadeEmail);
-            set
-            {
-            }
-        }
-
-        internal SingletonSIR SingletonSIR
-        {
-            get => default(SingletonSIR);
-            set
-            {
-            }
-        }
+        
 
         private void btnSend_Click(object sender, RoutedEventArgs e)
         {

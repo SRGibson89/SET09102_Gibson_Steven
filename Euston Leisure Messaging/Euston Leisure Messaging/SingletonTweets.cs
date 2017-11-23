@@ -28,12 +28,6 @@ namespace Euston_Leisure_Messaging
             }
         }
 
-        public Tweet Tweet
-        {
-            get => default(Tweet);
-            set
-            {
-            }
-        }
+        
     }
 }

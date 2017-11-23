@@ -37,12 +37,6 @@ namespace Euston_Leisure_Messaging
             }
         }
 
-        internal Hashtag Hashtag
-        {
-            get => default(Hashtag);
-            set
-            {
-            }
-        }
+        
     }
 }

@@ -19,13 +19,7 @@ namespace Euston_Leisure_Messaging
             SaveSMS();
         }
 
-        internal SingletonSms SingletonSms
-        {
-            get => default(SingletonSms);
-            set
-            {
-            }
-        }
+        
 
         private void LoadSMS()
         {

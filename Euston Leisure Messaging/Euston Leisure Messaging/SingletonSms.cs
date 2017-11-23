@@ -28,12 +28,6 @@ namespace Euston_Leisure_Messaging
             }
         }
 
-        public SMS SMS
-        {
-            get => default(SMS);
-            set
-            {
-            }
-        }
+       
     }
 }

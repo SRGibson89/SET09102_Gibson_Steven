@@ -28,12 +28,6 @@ namespace Euston_Leisure_Messaging
             }
         }
 
-        public Email Email
-        {
-            get => default(Email);
-            set
-            {
-            }
-        }
+        
     }
 }

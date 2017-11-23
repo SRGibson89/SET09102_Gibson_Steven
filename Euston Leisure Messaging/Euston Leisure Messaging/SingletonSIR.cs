@@ -29,13 +29,7 @@ namespace Euston_Leisure_Messaging
             }
         }
 
-        internal SIR SIR
-        {
-            get => default(SIR);
-            set
-            {
-            }
-        }
+        
     }
 }
 

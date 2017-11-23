@@ -28,13 +28,7 @@ namespace Euston_Leisure_Messaging
             }
         }
 
-        internal Mentions Mentions
-        {
-            get => default(Mentions);
-            set
-            {
-            }
-        }
+        
     }
 }
 

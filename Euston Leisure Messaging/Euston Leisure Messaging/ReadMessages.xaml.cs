@@ -37,13 +37,7 @@ namespace Euston_Leisure_Messaging
            
         }
 
-        public MainWindow MainWindow
-        {
-            get => default(MainWindow);
-            set
-            {
-            }
-        }
+       
 
         private void LoadMessages()
         {
