@@ -27,6 +27,14 @@ namespace Euston_Leisure_Messaging
             SaveEmail();
         }
 
+        internal SingletonEmail SingletonEmail
+        {
+            get => default(SingletonEmail);
+            set
+            {
+            }
+        }
+
         private void LoadEmails()
         {
             try

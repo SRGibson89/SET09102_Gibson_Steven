@@ -28,6 +28,7 @@ namespace Euston_Leisure_Messaging
         SingletonSIR SIR_List = SingletonSIR.Instance;
         SingletonMentions Mention_List = SingletonMentions.Instance;
         SingletonTag Tag_List = SingletonTag.Instance;
+        List<string> Quarantine = new List<string>();
 
         public ReadMessages()
         {
@@ -36,7 +37,13 @@ namespace Euston_Leisure_Messaging
            
         }
 
-       
+        public MainWindow MainWindow
+        {
+            get => default(MainWindow);
+            set
+            {
+            }
+        }
 
         private void LoadMessages()
         {
@@ -227,6 +234,36 @@ namespace Euston_Leisure_Messaging
                                  "\nHas Occurred: " + S.Occurances +
                                  "\n-------------------------------");
             }
+        }
+
+        private void btnQuara_Click(object sender, RoutedEventArgs e)
+        {
+            lstShow.Items.Clear();
+            string filename = @"Resources/quarantine.csv";
+            StreamReader reader = new StreamReader(File.OpenRead(filename));
+            if (reader.Peek() == 0) //checks to see if the file is empty
+            {
+                Console.WriteLine("File is empty");
+            }
+            else
+            {
+                while (!reader.EndOfStream)
+                {
+                    try
+                    {
+                        string line = reader.ReadLine();
+                        var value = line.Split(',');
+                        lstShow.Items.Add(value[0]);
+                        
+
+                    }
+                    catch (Exception E)
+                    {
+                        Console.WriteLine("Error: " + E);
+                    }
+                }//end of while
+                reader.Close();
+            }//end of else
         }
     }
 }

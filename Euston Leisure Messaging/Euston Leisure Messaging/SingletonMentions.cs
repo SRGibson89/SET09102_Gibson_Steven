@@ -27,6 +27,14 @@ namespace Euston_Leisure_Messaging
                 return instance;
             }
         }
+
+        internal Mentions Mentions
+        {
+            get => default(Mentions);
+            set
+            {
+            }
+        }
     }
 }
 

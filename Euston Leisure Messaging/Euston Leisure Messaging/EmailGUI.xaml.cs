@@ -25,6 +25,7 @@ namespace Euston_Leisure_Messaging
         private bool Incident = false, PreviousIncident = false;
         private string Email, Sender, Subject, CenterID;
         SingletonSIR SIR_List = SingletonSIR.Instance;
+        List<string> Quarantine = new List<string>();
 
 
         public EmailGUI(string MessageID)
@@ -40,7 +41,30 @@ namespace Euston_Leisure_Messaging
             
         }
 
-        
+        public InputWindow InputWindow
+        {
+            get => default(InputWindow);
+            set
+            {
+            }
+        }
+
+        internal FacadeEmail FacadeEmail
+        {
+            get => default(FacadeEmail);
+            set
+            {
+            }
+        }
+
+        internal SingletonSIR SingletonSIR
+        {
+            get => default(SingletonSIR);
+            set
+            {
+            }
+        }
+
         private void btnSend_Click(object sender, RoutedEventArgs e)
         {
             Email = txtMessage.Text.ToString();
@@ -266,9 +290,10 @@ namespace Euston_Leisure_Messaging
             string text = txtMessage.Text.ToLower();
             if (text.Contains("http://"))
             {
-               
+                    WriteQuarantine();
                     string Cleaned = Regex.Replace(text, @"http[^\s]+", "<URL>");
                     Email = Cleaned;
+                
                 
             }
             else
@@ -276,6 +301,29 @@ namespace Euston_Leisure_Messaging
                 Email = text;
             }
             
+        }
+
+        private void WriteQuarantine()
+        {
+            string text = txtMessage.Text.ToLower();
+            var regex = new Regex(@"http[^\s]+");
+            var matches = regex.Matches(text);
+
+            foreach (Match m in matches)
+            {
+                string Q = m.Value;
+                Console.WriteLine(m);
+                Quarantine.Add(Q);
+            }
+            string filename = @"Resources\quarantine.csv"; //filename where data will be stored
+            StreamWriter writer = new StreamWriter(filename, true);
+            foreach (string Q in Quarantine)
+            {
+                writer.WriteLine("{0}", Q.ToString()); //adds each object to the file as a line of text
+
+            }//foreach ends
+            writer.Close(); //closes the file
+            Console.WriteLine("All data saved to " + filename);
         }
 
         private void txtcenter3_LostFocus(object sender, RoutedEventArgs e)

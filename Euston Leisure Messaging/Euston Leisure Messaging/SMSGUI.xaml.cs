@@ -37,6 +37,22 @@ namespace Euston_Leisure_Messaging
 
         }
 
+        internal FacadeSMS FacadeSMS
+        {
+            get => default(FacadeSMS);
+            set
+            {
+            }
+        }
+
+        public InputWindow InputWindow
+        {
+            get => default(InputWindow);
+            set
+            {
+            }
+        }
+
         private void LoadTxtSpeak()
         {
             try

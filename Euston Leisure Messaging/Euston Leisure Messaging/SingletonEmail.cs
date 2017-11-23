@@ -27,5 +27,13 @@ namespace Euston_Leisure_Messaging
                 return instance;
             }
         }
+
+        public Email Email
+        {
+            get => default(Email);
+            set
+            {
+            }
+        }
     }
 }

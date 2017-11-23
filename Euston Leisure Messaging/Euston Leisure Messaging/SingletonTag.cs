@@ -36,5 +36,13 @@ namespace Euston_Leisure_Messaging
                 return instance;
             }
         }
+
+        internal Hashtag Hashtag
+        {
+            get => default(Hashtag);
+            set
+            {
+            }
+        }
     }
 }

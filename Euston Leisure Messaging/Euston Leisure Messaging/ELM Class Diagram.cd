@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Comment CommentText="MainWindow loads previous Mentions,Hashtags and SIRs get read in from files">
+    <Position X="5.033" Y="0.728" Height="0.75" Width="1.7" />
+  </Comment>
+  <Class Name="Euston_Leisure_Messaging.Email">
+    <Position X="3.75" Y="19" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAQAAAAMAAAECAAABAAAAEAAAAJAAIACA=</HashCode>
+      <FileName>Email.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Euston_Leisure_Messaging.EmailGUI" BaseTypeListCollapsed="true">
+    <Position X="3.75" Y="7.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQgAIAQCAAUEgADIAAAECAAAgAgAAAAQAAIAAYACA=</HashCode>
+      <FileName>EmailGUI.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="InputWindow" />
+      <Property Name="FacadeEmail" />
+      <Property Name="SingletonSIR" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Euston_Leisure_Messaging.FacadeEmail">
+    <Position X="3.75" Y="13.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAUAAECAAAAAAAAAA=</HashCode>
+      <FileName>FacadeEmail.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SingletonEmail" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Euston_Leisure_Messaging.FacadeSMS">
+    <Position X="7" Y="13.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAAAAACAEgAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>FacadeSMS.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SingletonSms" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Euston_Leisure_Messaging.FacadeTweet">
+    <Position X="10" Y="13.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAFAAAAAgEAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>FacadeTweet.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SingletonTweets" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Euston_Leisure_Messaging.Hashtag">
+    <Position X="16.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAgAAAAAAAAAAAAAAAACAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Hashtag.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Euston_Leisure_Messaging.InputWindow" BaseTypeListCollapsed="true">
+    <Position X="7.25" Y="4.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAEAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>InputWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="MainWindow" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Euston_Leisure_Messaging.MainWindow" BaseTypeListCollapsed="true">
+    <Position X="6.75" Y="0.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAgAAAAQACAABAIAAAIQAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Euston_Leisure_Messaging.Mentions">
+    <Position X="16.5" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAACAIAAAgCAAAAAAA=</HashCode>
+      <FileName>Mentions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Euston_Leisure_Messaging.ReadMessages" BaseTypeListCollapsed="true">
+    <Position X="13.75" Y="0.5" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AARAAAAAAAgAAEBARAIEAIASAAgAQAAAQAAEAAgAkAA=</HashCode>
+      <FileName>ReadMessages.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="MainWindow" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Euston_Leisure_Messaging.SingletonEmail">
+    <Position X="3.75" Y="16.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAABAAAAAQAAAAAAgAAA=</HashCode>
+      <FileName>SingletonEmail.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Email" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Euston_Leisure_Messaging.SingletonMentions">
+    <Position X="13.75" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAABAAAAAQAAQAAAAAAA=</HashCode>
+      <FileName>SingletonMentions.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Mentions" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Euston_Leisure_Messaging.SingletonSIR">
+    <Position X="0.5" Y="10.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAABAAAAAQAAAAABAAAA=</HashCode>
+      <FileName>SingletonSIR.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SIR" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Euston_Leisure_Messaging.SingletonSms">
+    <Position X="7" Y="16.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAABAAAAAQCAAAAAAAAA=</HashCode>
+      <FileName>SingletonSms.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SMS" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Euston_Leisure_Messaging.SingletonTag">
+    <Position X="13.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAEAAAAAAA=</HashCode>
+      <FileName>SingletonTag.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Hashtag" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Euston_Leisure_Messaging.SingletonTweets">
+    <Position X="10" Y="16.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAABAAAQAQAAAAAAAgAA=</HashCode>
+      <FileName>SingletonTweets.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Tweet" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Euston_Leisure_Messaging.SIR">
+    <Position X="0.5" Y="14" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAIAAAQAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SIR.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Euston_Leisure_Messaging.SMS">
+    <Position X="7" Y="19" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAEAAAAJAAAACA=</HashCode>
+      <FileName>SMS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Euston_Leisure_Messaging.SMSGUI" BaseTypeListCollapsed="true">
+    <Position X="7" Y="7.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>EAAQAAYAACEAAAAACAAAAEAAAAAIAAACAEAAAAAAAgA=</HashCode>
+      <FileName>SMSGUI.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="FacadeSMS" />
+      <Property Name="InputWindow" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Euston_Leisure_Messaging.Tweet">
+    <Position X="10" Y="19" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIEAAACJAAAACA=</HashCode>
+      <FileName>Tweet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Euston_Leisure_Messaging.TweetGUI" BaseTypeListCollapsed="true">
+    <Position X="10" Y="7.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>FIAQAAIAACEBAAAACAYAAEAQAAEIAAQAAAIAAIQAAgA=</HashCode>
+      <FileName>TweetGUI.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="FacadeTweet" />
+      <Property Name="InputWindow" />
+      <Property Name="SingletonTag" />
+      <Property Name="SingletonMentions" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

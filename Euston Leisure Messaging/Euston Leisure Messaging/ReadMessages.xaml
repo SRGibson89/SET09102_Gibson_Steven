@@ -15,6 +15,7 @@
         <Button x:Name="btnBack" Content="Return to Menu" Margin="317,470,155,0" VerticalAlignment="Top" Height="26" Click="btnBack_Click"/>
         <Button x:Name="btntrending" Content="Show Trends" Margin="75,187,397,0" VerticalAlignment="Top" Height="26" Click="btntrending_Click"/>
         <Button x:Name="btnSirs" Content="Show SIRs" Margin="236,187,236,0" VerticalAlignment="Top" Height="26" Click="btnSirs_Click"/>
+        <Button x:Name="btnQuara" Content="Show URLs" Margin="397,187,75,0" VerticalAlignment="Top" Height="26" Click="btnQuara_Click"/>
 
     </Grid>
 </Window>

@@ -26,6 +26,14 @@ namespace Euston_Leisure_Messaging
             txtID.MaxLength = 10;
         }
 
+        public MainWindow MainWindow
+        {
+            get => default(MainWindow);
+            set
+            {
+            }
+        }
+
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
            

@@ -27,5 +27,13 @@ namespace Euston_Leisure_Messaging
                 return instance;
             }
         }
+
+        public SMS SMS
+        {
+            get => default(SMS);
+            set
+            {
+            }
+        }
     }
 }

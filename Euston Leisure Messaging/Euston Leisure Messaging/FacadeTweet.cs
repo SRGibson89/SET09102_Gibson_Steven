@@ -24,6 +24,14 @@ namespace Euston_Leisure_Messaging
             SaveTweet();
         }
 
+        internal SingletonTweets SingletonTweets
+        {
+            get => default(SingletonTweets);
+            set
+            {
+            }
+        }
+
         private void LoadTweets()
         {
             try
