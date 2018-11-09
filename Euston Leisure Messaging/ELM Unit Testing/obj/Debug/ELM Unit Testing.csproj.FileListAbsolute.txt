@@ -1,0 +1,11 @@
+E:\GitHub\SET09102_Gibson_Steven\Euston Leisure Messaging\ELM Unit Testing\bin\Debug\ELM Unit Testing.dll
+E:\GitHub\SET09102_Gibson_Steven\Euston Leisure Messaging\ELM Unit Testing\bin\Debug\ELM Unit Testing.pdb
+E:\GitHub\SET09102_Gibson_Steven\Euston Leisure Messaging\ELM Unit Testing\bin\Debug\Euston Leisure Messaging.exe
+E:\GitHub\SET09102_Gibson_Steven\Euston Leisure Messaging\ELM Unit Testing\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+E:\GitHub\SET09102_Gibson_Steven\Euston Leisure Messaging\ELM Unit Testing\bin\Debug\Newtonsoft.Json.dll
+E:\GitHub\SET09102_Gibson_Steven\Euston Leisure Messaging\ELM Unit Testing\bin\Debug\Euston Leisure Messaging.pdb
+E:\GitHub\SET09102_Gibson_Steven\Euston Leisure Messaging\ELM Unit Testing\bin\Debug\Euston Leisure Messaging.exe.config
+E:\GitHub\SET09102_Gibson_Steven\Euston Leisure Messaging\ELM Unit Testing\obj\Debug\ELM Unit Testing.csprojResolveAssemblyReference.cache
+E:\GitHub\SET09102_Gibson_Steven\Euston Leisure Messaging\ELM Unit Testing\obj\Debug\ELM Unit Testing.csproj.CoreCompileInputs.cache
+E:\GitHub\SET09102_Gibson_Steven\Euston Leisure Messaging\ELM Unit Testing\obj\Debug\ELM Unit Testing.dll
+E:\GitHub\SET09102_Gibson_Steven\Euston Leisure Messaging\ELM Unit Testing\obj\Debug\ELM Unit Testing.pdb

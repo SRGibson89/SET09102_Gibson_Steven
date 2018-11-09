@@ -1,0 +1,25 @@
+E:\GitHub\SET09102_Gibson_Steven\Euston Leisure Messaging\Euston Leisure Messaging\bin\Debug\Euston Leisure Messaging.exe.config
+E:\GitHub\SET09102_Gibson_Steven\Euston Leisure Messaging\Euston Leisure Messaging\bin\Debug\Euston Leisure Messaging.exe
+E:\GitHub\SET09102_Gibson_Steven\Euston Leisure Messaging\Euston Leisure Messaging\bin\Debug\Euston Leisure Messaging.pdb
+E:\GitHub\SET09102_Gibson_Steven\Euston Leisure Messaging\Euston Leisure Messaging\obj\Debug\Euston Leisure Messaging.csprojResolveAssemblyReference.cache
+E:\GitHub\SET09102_Gibson_Steven\Euston Leisure Messaging\Euston Leisure Messaging\obj\Debug\EmailGUI.baml
+E:\GitHub\SET09102_Gibson_Steven\Euston Leisure Messaging\Euston Leisure Messaging\obj\Debug\InputWindow.baml
+E:\GitHub\SET09102_Gibson_Steven\Euston Leisure Messaging\Euston Leisure Messaging\obj\Debug\MainWindow.baml
+E:\GitHub\SET09102_Gibson_Steven\Euston Leisure Messaging\Euston Leisure Messaging\obj\Debug\SMSGUI.baml
+E:\GitHub\SET09102_Gibson_Steven\Euston Leisure Messaging\Euston Leisure Messaging\obj\Debug\TweetGUI.baml
+E:\GitHub\SET09102_Gibson_Steven\Euston Leisure Messaging\Euston Leisure Messaging\obj\Debug\EmailGUI.g.cs
+E:\GitHub\SET09102_Gibson_Steven\Euston Leisure Messaging\Euston Leisure Messaging\obj\Debug\InputWindow.g.cs
+E:\GitHub\SET09102_Gibson_Steven\Euston Leisure Messaging\Euston Leisure Messaging\obj\Debug\MainWindow.g.cs
+E:\GitHub\SET09102_Gibson_Steven\Euston Leisure Messaging\Euston Leisure Messaging\obj\Debug\SMSGUI.g.cs
+E:\GitHub\SET09102_Gibson_Steven\Euston Leisure Messaging\Euston Leisure Messaging\obj\Debug\TweetGUI.g.cs
+E:\GitHub\SET09102_Gibson_Steven\Euston Leisure Messaging\Euston Leisure Messaging\obj\Debug\App.g.cs
+E:\GitHub\SET09102_Gibson_Steven\Euston Leisure Messaging\Euston Leisure Messaging\obj\Debug\Euston Leisure Messaging_MarkupCompile.cache
+E:\GitHub\SET09102_Gibson_Steven\Euston Leisure Messaging\Euston Leisure Messaging\obj\Debug\Euston Leisure Messaging.g.resources
+E:\GitHub\SET09102_Gibson_Steven\Euston Leisure Messaging\Euston Leisure Messaging\obj\Debug\Euston_Leisure_Messaging.Properties.Resources.resources
+E:\GitHub\SET09102_Gibson_Steven\Euston Leisure Messaging\Euston Leisure Messaging\obj\Debug\Euston Leisure Messaging.csproj.GenerateResource.Cache
+E:\GitHub\SET09102_Gibson_Steven\Euston Leisure Messaging\Euston Leisure Messaging\obj\Debug\Euston Leisure Messaging.csproj.CoreCompileInputs.cache
+E:\GitHub\SET09102_Gibson_Steven\Euston Leisure Messaging\Euston Leisure Messaging\obj\Debug\Euston Leisure Messaging.exe
+E:\GitHub\SET09102_Gibson_Steven\Euston Leisure Messaging\Euston Leisure Messaging\obj\Debug\Euston Leisure Messaging.pdb
+E:\GitHub\SET09102_Gibson_Steven\Euston Leisure Messaging\Euston Leisure Messaging\bin\Debug\Newtonsoft.Json.dll
+E:\GitHub\SET09102_Gibson_Steven\Euston Leisure Messaging\Euston Leisure Messaging\obj\Debug\ReadMessages.baml
+E:\GitHub\SET09102_Gibson_Steven\Euston Leisure Messaging\Euston Leisure Messaging\obj\Debug\ReadMessages.g.cs
